@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attractions - Dali, Yunnan</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    .attractions-hero {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+
+    .attractions-hero .hero-large {
+      grid-column: 1 / -1;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      height: 380px;
+    }
+
+    .attractions-hero .hero-large img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .attractions-hero .hero-large .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    }
+
+    .attractions-hero .hero-large .overlay h3 {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .attractions-hero .hero-large .overlay p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .attractions-hero .hero-small {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      height: 250px;
+    }
+
+    .attractions-hero .hero-small img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .attractions-hero .hero-small:hover img {
+      transform: scale(1.05);
+    }
+
+    .attractions-hero .hero-small .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
+    }
+
+    .attractions-hero .hero-small .overlay h3 {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .spots-list {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .spot-item {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 50px;
+      padding: 25px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s;
+      flex-wrap: wrap;
+    }
+
+    .spot-item:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .spot-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .spot-img {
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+    }
+
+    .spot-img img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .spot-info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .spot-info h3 {
+      font-size: 22px;
+      color: #e8d5a3;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    .spot-info .tag {
+      display: inline-block;
+      padding: 3px 12px;
+      background: rgba(232,213,163,0.15);
+      color: #e8d5a3;
+      border-radius: 12px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .spot-info p {
+      line-height: 26px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    @media screen and (max-width: 768px) {
+      .attractions-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .attractions-hero .hero-large {
+        height: 250px;
+      }
+
+      .attractions-hero .hero-small {
+        height: 200px;
+      }
+
+      .spot-item,
+      .spot-item:nth-child(even) {
+        flex-direction: column;
+      }
+
+      .spot-img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="back-welcome">Back to Welcome</a>
+  <div class="navbar">
+    <img class="logo" src="./img/logo1.png" alt="">
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="culture.html">Culture</a></li>
+      <li><a href="attractions.html" class="active">Attractions</a></li>
+      <li><a href="food.html">Cuisine</a></li>
+    </ul>
+    <div class="search-container">
+      <a href="index.html" class="back-btn">Welcome</a>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="banner">
+      <img src="./img/3.png" alt="Dali Attractions">
+      <h1>AT<br>TRAC<br>TIONS</h1>
+    </div>
+
+    <main>
+      <div class="box1">
+        <img class="hual" src="./img/hual.png" alt="">
+        <img class="huar" src="./img/huar.png" alt="">
+        <div class="title1">
+          <img src="./img/i1.png" alt="">Must-Visit Destinations<img src="./img/i1.png" alt="">
+        </div>
+
+        <div class="attractions-hero">
+          <div class="hero-large">
+            <img src="./img/d1.png" alt="Erhai Lake">
+            <div class="overlay">
+              <h3>Erhai Lake</h3>
+              <p>The sparkling jewel of Dali — a 250-square-kilometer alpine lake surrounded by mountains and ancient villages</p>
+            </div>
+          </div>
+          <div class="hero-small">
+            <img src="./img/d2.png" alt="Three Pagodas">
+            <div class="overlay">
+              <h3>Three Pagodas</h3>
+            </div>
+          </div>
+          <div class="hero-small">
+            <img src="./img/d3.png" alt="Cangshan Mountain">
+            <div class="overlay">
+              <h3>Cangshan Mountain</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <img class="dsl" src="./img/dsl.png" alt="">
+        <img class="dsr" src="./img/dsr.png" alt="">
+        <div class="spots-list">
+          <div class="spot-item">
+            <div class="spot-img">
+              <img src="./img/d4.png" alt="Dali Old Town">
+            </div>
+            <div class="spot-info">
+              <span class="tag">Heritage</span>
+              <h3>Dali Old Town</h3>
+              <p>
+                Dali Old Town is a beautifully preserved historical settlement dating back to the Ming Dynasty (1368-1644). Its cobblestone streets are lined with traditional Bai architecture, artisan workshops, teahouses, and boutique shops. The South Gate, with its imposing tower, offers panoramic views of the entire town and the surrounding mountains. Walking through the old town feels like stepping back in time, with the aroma of local tea and the sound of flowing water from ancient canals accompanying every step.
+              </p>
+            </div>
+          </div>
+
+          <div class="spot-item">
+            <div class="spot-img">
+              <img src="./img/d5.png" alt="Butterfly Spring">
+            </div>
+            <div class="spot-info">
+              <span class="tag">Nature</span>
+              <h3>Butterfly Spring</h3>
+              <p>
+                Located at the foot of Yunlong Peak of Cangshan Mountain, Butterfly Spring is a natural spring pool surrounded by lush vegetation. Every year in the fourth month of the lunar calendar, thousands of butterflies gather around the spring, creating a breathtaking natural spectacle. The spring is famous in Chinese culture through the romantic folk tale "The Butterfly Lovers" and the 1950s film of the same name, making it a destination of both natural beauty and cultural significance.
+              </p>
+            </div>
+          </div>
+
+          <div class="spot-item">
+            <div class="spot-img">
+              <img src="./img/d6.png" alt="Xizhou Village">
+            </div>
+            <div class="spot-info">
+              <span class="tag">Village</span>
+              <h3>Xizhou Village</h3>
+              <p>
+                Xizhou Village is one of the most well-preserved Bai ethnic villages near Dali. Known for its grand courtyard homes built by wealthy merchant families during the Republic of China era, Xizhou offers an authentic glimpse into traditional Bai life. The village is also famous for its tie-dye workshops, where visitors can learn the centuries-old indigo dyeing technique. The weekly market in Xizhou is a vibrant affair where locals gather to trade everything from fresh produce to handmade crafts.
+              </p>
+            </div>
+          </div>
+
+          <div class="spot-item">
+            <div class="spot-img">
+              <img src="./img/d7.png" alt="Shaxi Ancient Town">
+            </div>
+            <div class="spot-info">
+              <span class="tag">Ancient Town</span>
+              <h3>Shaxi Ancient Town</h3>
+              <p>
+                Once a prosperous trading post on the Ancient Tea Horse Road, Shaxi Ancient Town is now a quiet, charming destination that has retained much of its original character. The town's main square, Sideng Market, is the only surviving market square from this historic trade route. Shaxi's well-preserved temples, theaters, and traditional houses offer visitors a rare window into the life of merchants and travelers who once journeyed between Yunnan and Tibet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <img class="xia" src="./img/xia.png" alt="">
+      <img class="xiao" src="./img/23.png" alt=""><br>
+      <p>
+        <a href="home.html">Home</a>|<a href="culture.html">Culture</a>|<a href="attractions.html">Attractions</a>
+        |<a href="food.html">Cuisine</a>|<a href="index.html">Welcome</a><br>
+        <span class="student-id" style="position:static;top:auto;">i25035558@student.newinti.edi.my</span>
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>

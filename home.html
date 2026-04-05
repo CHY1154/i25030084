@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Dali, Yunnan</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    .carousel {
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .carousel-main {
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      position: relative;
+    }
+
+    .carousel-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      transition: opacity 0.5s;
+    }
+
+    .carousel-main img.active {
+      display: block;
+    }
+
+    .carousel-thumbs-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .carousel-arrow {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+
+    .carousel-arrow:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .carousel-thumbs {
+      display: flex;
+      gap: 12px;
+      overflow: hidden;
+      max-width: 500px;
+    }
+
+    .carousel-thumbs img {
+      width: 100px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .carousel-thumbs img.active {
+      border-color: #fff;
+      opacity: 1;
+    }
+
+    .carousel-thumbs img:hover {
+      opacity: 0.8;
+    }
+
+    .home-intro {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .home-intro h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .home-intro p {
+      text-indent: 2em;
+      line-height: 30px;
+      font-size: 15px;
+    }
+
+    .highlights {
+      max-width: 1100px;
+      margin: 80px auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .highlight-card {
+      width: 280px;
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight-card h3 {
+      font-size: 20px;
+      margin: 15px 0 10px;
+      font-weight: 400;
+    }
+
+    .highlight-card p {
+      font-size: 13px;
+      line-height: 22px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .highlight-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .home-tab-section {
+      max-width: 1100px;
+      margin: 80px auto;
+      display: flex;
+      gap: 30px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+    }
+
+    .tab-buttons {
+      flex: 0 0 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tab-btn {
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: rgba(255,255,255,0.7);
+      cursor: pointer;
+      text-align: left;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .tab-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .tab-btn.active {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.3);
+      color: #fff;
+    }
+
+    .tab-content-area {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .tab-panel {
+      display: none;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .tab-panel h3 {
+      font-size: 24px;
+      color: #e8d5a3;
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+
+    .tab-panel p {
+      line-height: 28px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .tab-panel .tab-img-row {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab-panel .tab-img-row img {
+      width: 48%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .carousel-main {
+        height: 260px;
+      }
+
+      .carousel-thumbs img {
+        width: 75px;
+        height: 50px;
+      }
+
+      .highlight-card {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .tab-buttons {
+        flex: 1 1 100%;
+        flex-direction: row;
+      }
+
+      .tab-btn {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="back-welcome">Back to Welcome</a>
+  <div class="navbar">
+    <img class="logo" src="./img/logo1.png" alt="">
+    <ul class="nav-links">
+      <li><a href="home.html" class="active">Home</a></li>
+      <li><a href="culture.html">Culture</a></li>
+      <li><a href="attractions.html">Attractions</a></li>
+      <li><a href="food.html">Cuisine</a></li>
+    </ul>
+    <div class="search-container">
+      <a href="index.html" class="back-btn">Welcome</a>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="banner">
+      <img src="./img/1.png" alt="Dali">
+      <h1>DA<br>LI</h1>
+    </div>
+
+    <main>
+      <div class="box1">
+        <img class="hual" src="./img/hual.png" alt="">
+        <img class="huar" src="./img/huar.png" alt="">
+        <div class="carousel">
+          <div class="carousel-main">
+            <img src="./img/a1.png" alt="Erhai Lake" class="active">
+            <img src="./img/a2.png" alt="Cangshan Mountain">
+            <img src="./img/a3.png" alt="Three Pagodas">
+            <img src="./img/a4.png" alt="Dali Old Town">
+            <img src="./img/a5.png" alt="Bai Village">
+          </div>
+          <div class="carousel-thumbs-wrapper">
+            <button class="carousel-arrow" onclick="scrollThumbs(-1)">&#9664;</button>
+            <div class="carousel-thumbs">
+              <img src="./img/a1.png" alt="Erhai Lake" class="active" onclick="showImage(0)">
+              <img src="./img/a2.png" alt="Cangshan Mountain" onclick="showImage(1)">
+              <img src="./img/a3.png" alt="Three Pagodas" onclick="showImage(2)">
+              <img src="./img/a4.png" alt="Dali Old Town" onclick="showImage(3)">
+              <img src="./img/a5.png" alt="Bai Village" onclick="showImage(4)">
+            </div>
+            <button class="carousel-arrow" onclick="scrollThumbs(1)">&#9654;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <img class="dsl" src="./img/dsl.png" alt="">
+        <img class="dsr" src="./img/dsr.png" alt="">
+        <div class="home-intro">
+          <h2>Discover Dali</h2>
+          <p>
+            Dali is a picturesque city located in the west of Yunnan Province, southwestern China. Nestled between the majestic Cangshan Mountain range and the serene Erhai Lake, Dali has long been celebrated as one of the most beautiful places in China. With its pleasant climate, rich cultural heritage, and stunning natural landscapes, Dali attracts travelers from around the world seeking both adventure and tranquility.
+          </p>
+          <p>
+            The city is home to the Bai ethnic minority, whose vibrant traditions, distinctive architecture, and colorful festivals add a unique cultural dimension to the region. From the ancient streets of Dali Old Town to the shimmering waters of Erhai Lake, every corner of Dali tells a story of natural beauty and human creativity that has endured for over a thousand years.
+          </p>
+        </div>
+      </div>
+
+      <div class="highlights">
+        <div class="highlight-card">
+          <img src="./img/a6.png" alt="Erhai Lake">
+          <h3>Erhai Lake</h3>
+          <p>A vast alpine lake surrounded by mountains, known as the "Pearl of the Plateau." Its crystal-clear waters reflect the sky and Cangshan peaks.</p>
+        </div>
+        <div class="highlight-card">
+          <img src="./img/a7.png" alt="Cangshan Mountain">
+          <h3>Cangshan Mountain</h3>
+          <p>Nineteen peaks form a dramatic backdrop to Dali. Snow-capped in winter, the mountain offers hiking trails with breathtaking views.</p>
+        </div>
+        <div class="highlight-card">
+          <img src="./img/a8.png" alt="Three Pagodas">
+          <h3>Three Pagodas</h3>
+          <p>An iconic landmark of Dali built over 1,800 years ago. These elegant pagodas stand as a symbol of ancient Buddhist architecture.</p>
+        </div>
+      </div>
+
+      <div class="title1">
+        <img src="./img/i1.png" alt="">Explore Dali<img src="./img/i1.png" alt="">
+      </div>
+
+      <div class="home-tab-section">
+        <div class="tab-buttons">
+          <div class="tab-btn active" onclick="switchTab(0)">Geography</div>
+          <div class="tab-btn" onclick="switchTab(1)">Climate</div>
+          <div class="tab-btn" onclick="switchTab(2)">People</div>
+        </div>
+        <div class="tab-content-area">
+          <div class="tab-panel active">
+            <h3>Geography of Dali</h3>
+            <p>
+              Dali is situated on a fertile plain between Cangshan Mountain to the west and Erhai Lake to the east. The region sits at an elevation of approximately 1,976 meters above sea level, giving it a mild highland climate. The Erhai Lake basin covers an area of about 2,500 square kilometers, making it one of the largest fault lakes in southwestern China. The surrounding mountains are home to diverse ecosystems, from subtropical forests at lower elevations to alpine meadows near the snow-capped peaks that rise above 4,000 meters.
+            </p>
+          </div>
+          <div class="tab-panel">
+            <h3>Climate and Seasons</h3>
+            <p>
+              Dali enjoys a subtropical highland climate characterized by mild temperatures year-round. The average annual temperature is around 15 degrees Celsius, with warm summers rarely exceeding 25 degrees and cool winters averaging around 8 degrees. The region experiences a distinct dry season from November to April and a rainy season from May to October. Spring is the most popular time to visit, when the mountains are blanketed with wildflowers and the weather is pleasantly warm with clear blue skies.
+            </p>
+          </div>
+          <div class="tab-panel">
+            <h3>The People of Dali</h3>
+            <p>
+              Dali is home to a rich tapestry of ethnic groups, with the Bai people comprising the largest minority population. The Bai have lived in this region for over two millennia, developing a unique culture that blends elements from Han Chinese, Tibetan, and Southeast Asian traditions. The local way of life is deeply connected to the land, with fishing, farming, and artisan crafts forming the backbone of the community. Visitors are often struck by the warmth and hospitality of the local people, who take great pride in sharing their cultural heritage through music, dance, and traditional ceremonies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <img class="xia" src="./img/xia.png" alt="">
+      <img class="xiao" src="./img/23.png" alt=""><br>
+      <p>
+        <a href="home.html">Home</a>|<a href="culture.html">Culture</a>|<a href="attractions.html">Attractions</a>
+        |<a href="food.html">Cuisine</a>|<a href="index.html">Welcome</a><br>
+        <span class="student-id" style="position:static;top:auto;">i25035558@student.newinti.edi.my</span>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function showImage(index) {
+      var mainImgs = document.querySelectorAll('.carousel-main img');
+      var thumbImgs = document.querySelectorAll('.carousel-thumbs img');
+      for (var i = 0; i < mainImgs.length; i++) {
+        mainImgs[i].classList.remove('active');
+        thumbImgs[i].classList.remove('active');
+      }
+      mainImgs[index].classList.add('active');
+      thumbImgs[index].classList.add('active');
+    }
+
+    function scrollThumbs(dir) {
+      var thumbsContainer = document.querySelector('.carousel-thumbs');
+      thumbsContainer.scrollBy({ left: dir * 120, behavior: 'smooth' });
+    }
+
+    function switchTab(index) {
+      var btns = document.querySelectorAll('.tab-btn');
+      var panels = document.querySelectorAll('.tab-panel');
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].classList.remove('active');
+        panels[i].classList.remove('active');
+      }
+      btns[index].classList.add('active');
+      panels[index].classList.add('active');
+    }
+  </script>
+</body>
+
+</html>

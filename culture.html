@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culture - Dali, Yunnan</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    .culture-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .culture-section {
+      display: flex;
+      gap: 40px;
+      margin: 60px 0;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .culture-section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .culture-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .culture-text h3 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      font-weight: 400;
+      color: #e8d5a3;
+    }
+
+    .culture-text p {
+      line-height: 28px;
+      font-size: 14px;
+      text-indent: 2em;
+    }
+
+    .culture-img {
+      flex: 1;
+      min-width: 280px;
+      max-width: 450px;
+    }
+
+    .culture-img img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .culture-quote {
+      max-width: 800px;
+      margin: 80px auto;
+      text-align: center;
+      padding: 40px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+    }
+
+    .culture-quote p {
+      font-size: 18px;
+      line-height: 36px;
+      font-style: italic;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .history-cards {
+      max-width: 1000px;
+      margin: 60px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .history-card {
+      padding: 25px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s;
+    }
+
+    .history-card:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .history-card h4 {
+      font-size: 16px;
+      color: #e8d5a3;
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .history-card p {
+      font-size: 14px;
+      line-height: 24px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    @media screen and (max-width: 768px) {
+      .culture-section,
+      .culture-section.reverse {
+        flex-direction: column;
+      }
+
+      .culture-img {
+        max-width: 100%;
+      }
+
+      .culture-quote p {
+        font-size: 15px;
+        line-height: 28px;
+      }
+
+      .history-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="back-welcome">Back to Welcome</a>
+  <div class="navbar">
+    <img class="logo" src="./img/logo1.png" alt="">
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="culture.html" class="active">Culture</a></li>
+      <li><a href="attractions.html">Attractions</a></li>
+      <li><a href="food.html">Cuisine</a></li>
+    </ul>
+    <div class="search-container">
+      <a href="index.html" class="back-btn">Welcome</a>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="banner">
+      <img src="./img/2.png" alt="Dali Culture">
+      <h1>CUL<br>TU<br>RE</h1>
+    </div>
+
+    <main>
+      <div class="box1">
+        <img class="hual" src="./img/hual.png" alt="">
+        <img class="huar" src="./img/huar.png" alt="">
+        <div class="culture-layout">
+          <div class="title1">
+            <img src="./img/i1.png" alt="">The Bai People<img src="./img/i1.png" alt="">
+          </div>
+
+          <div class="culture-section">
+            <div class="culture-text">
+              <h3>A Living Heritage</h3>
+              <p>
+                The Bai ethnic group is the largest minority in Dali, with a population of over 1.8 million. Their history stretches back more than two thousand years, and they have developed a rich and distinctive culture that is deeply intertwined with the land they inhabit. The Bai people are known for their architectural skills, particularly the distinctive three-course wall buildings with white walls and painted tiles that dot the landscape of Dali.
+              </p>
+              <p>
+                Bai women are celebrated for their exquisite embroidery and tie-dye techniques. The traditional Bai costume, featuring a white blouse, red vest, and embroidered apron, is a symbol of their cultural identity. The Bai language belongs to the Tibeto-Burman language family, though most Bai people also speak Mandarin Chinese fluently.
+              </p>
+            </div>
+            <div class="culture-img">
+              <img src="./img/c1.png" alt="Bai culture">
+            </div>
+          </div>
+
+          <div class="culture-section reverse">
+            <div class="culture-text">
+              <h3>Festivals and Traditions</h3>
+              <p>
+                Dali is a city of festivals. The Third Month Fair, held annually in the third month of the lunar calendar, is the grandest celebration in the region. Originally a Buddhist gathering, it has evolved into a vibrant marketplace and cultural exchange lasting several days, attracting visitors from across Yunnan and beyond.
+              </p>
+              <p>
+                The Benzhu Festival, dedicated to local deities known as Benzhu, reflects the Bai people's unique blend of animism, Buddhism, and local folk beliefs. Each village has its own Benzhu temple, and the festivals involve elaborate ceremonies, traditional music, dance performances, and communal feasting that strengthen community bonds.
+              </p>
+            </div>
+            <div class="culture-img">
+              <img src="./img/c2.png" alt="Dali festivals">
+            </div>
+          </div>
+
+          <div class="culture-section">
+            <div class="culture-text">
+              <h3>Architecture and Craftsmanship</h3>
+              <p>
+                Dali's architecture is a testament to the Bai people's artistic sensibility. The iconic Three Pagodas of Chongsheng Temple, dating back to the 9th century, exemplify the fusion of Chinese and local architectural styles. Dali Old Town itself is a living museum, with its well-preserved Ming and Qing dynasty buildings, cobblestone streets, and intricate wood carvings.
+              </p>
+              <p>
+                Bai craftsmen are renowned for their marble products, wood carving, silver jewelry, and tie-dye fabric known as "Zharang." The traditional tie-dye technique uses natural indigo dyes extracted from local plants, creating beautiful patterns of blue and white that have become a signature art form of the region.
+              </p>
+            </div>
+            <div class="culture-img">
+              <img src="./img/c3.png" alt="Dali architecture">
+            </div>
+          </div>
+
+          <div class="culture-quote">
+            <p>"In Dali, the wind, the flowers, the snow, and the moon are not just scenery — they are the soul of a people who have lived in harmony with nature for millennia."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <img class="dsl" src="./img/dsl.png" alt="">
+        <img class="dsr" src="./img/dsr.png" alt="">
+        <div class="title1">
+          <img src="./img/i1.png" alt="">Historical Milestones<img src="./img/i1.png" alt="">
+        </div>
+
+        <div class="history-cards">
+          <div class="history-card">
+            <h4>109 BC — Han Dynasty Control</h4>
+            <p>Dali enters Chinese historical records as part of the Han Dynasty's expansion into the southwest. The region becomes an important trade route connecting China with India and Southeast Asia.</p>
+          </div>
+          <div class="history-card">
+            <h4>738 AD — Nanzhao Kingdom</h4>
+            <p>The powerful Nanzhao Kingdom unites the region with Dali as its capital. This kingdom becomes a major cultural and political force in Southeast Asia for over two centuries.</p>
+          </div>
+          <div class="history-card">
+            <h4>937 AD — Dali Kingdom</h4>
+            <p>The Dali Kingdom is established by Duan Siping. For over 300 years, this Buddhist kingdom flourishes as a center of art, literature, and religious scholarship.</p>
+          </div>
+          <div class="history-card">
+            <h4>1274 AD — Yuan Dynasty</h4>
+            <p>Kublai Khan's forces conquer Dali, integrating the region into the Mongol Empire. Marco Polo reportedly visits the area during this period.</p>
+          </div>
+          <div class="history-card">
+            <h4>Present Day — Cultural Preservation</h4>
+            <p>Dali is recognized as a national historic and cultural city. Tourism and heritage preservation efforts ensure that its traditions continue to thrive in the modern era.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <img class="xia" src="./img/xia.png" alt="">
+      <img class="xiao" src="./img/23.png" alt=""><br>
+      <p>
+        <a href="home.html">Home</a>|<a href="culture.html">Culture</a>|<a href="attractions.html">Attractions</a>
+        |<a href="food.html">Cuisine</a>|<a href="index.html">Welcome</a><br>
+        <span class="student-id" style="position:static;top:auto;">i25035558@student.newinti.edi.my</span>
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>

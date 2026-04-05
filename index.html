@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome - Dali, Yunnan</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .welcome-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .welcome-container .hual {
+      position: absolute;
+      left: 0;
+      top: 180px;
+      width: 200px;
+      height: 400px;
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .welcome-container .huar {
+      position: absolute;
+      right: 0;
+      top: 180px;
+      width: 200px;
+      height: 400px;
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .welcome-container .dsl {
+      position: absolute;
+      left: 0;
+      bottom: 100px;
+      width: 200px;
+      height: 300px;
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .welcome-container .dsr {
+      position: absolute;
+      right: 0;
+      bottom: 100px;
+      width: 200px;
+      height: 300px;
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .welcome-title {
+      font-size: 72px;
+      font-weight: 300;
+      letter-spacing: 8px;
+      margin-bottom: 15px;
+      text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+    }
+
+    .welcome-sub {
+      font-size: 22px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 50px;
+      letter-spacing: 4px;
+    }
+
+    .enter-btn {
+      display: inline-block;
+      padding: 18px 60px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 18px;
+      letter-spacing: 3px;
+      transition: all 0.4s ease;
+      text-transform: uppercase;
+    }
+
+    .enter-btn:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .welcome-decor {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+
+    .welcome-decor img {
+      width: 200px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.7;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    @media screen and (max-width: 768px) {
+      .welcome-title {
+        font-size: 42px;
+        letter-spacing: 4px;
+      }
+
+      .welcome-sub {
+        font-size: 16px;
+        margin-bottom: 35px;
+      }
+
+      .enter-btn {
+        padding: 14px 40px;
+        font-size: 15px;
+      }
+
+      .welcome-decor img {
+        width: 45%;
+        height: 100px;
+      }
+
+      .welcome-container .hual,
+      .welcome-container .huar,
+      .welcome-container .dsl,
+      .welcome-container .dsr {
+        width: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="welcome-container">
+    <img class="hual" src="./img/hual.png" alt="">
+    <img class="huar" src="./img/huar.png" alt="">
+    <img class="dsl" src="./img/dsl.png" alt="">
+    <img class="dsr" src="./img/dsr.png" alt="">
+    <h1 class="welcome-title">DALI</h1>
+    <p class="welcome-sub">Yunnan, China</p>
+    <a href="home.html" class="enter-btn">Explore Dali</a>
+    <div class="welcome-decor">
+      <img src="./img/a1.png" alt="Dali scenery">
+      <img src="./img/a2.png" alt="Dali scenery">
+      <img src="./img/a3.png" alt="Dali scenery">
+    </div>
+    <p class="student-id">i25035558@student.newinti.edi.my</p>
+  </div>
+</body>
+
+</html>

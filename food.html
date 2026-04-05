@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuisine - Dali, Yunnan</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    .food-intro {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .food-intro p {
+      font-size: 15px;
+      line-height: 28px;
+    }
+
+    .food-featured {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .food-item {
+      display: flex;
+      gap: 0;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s;
+      flex-wrap: wrap;
+    }
+
+    .food-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .food-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .food-item-img {
+      flex: 0 0 320px;
+      overflow: hidden;
+    }
+
+    .food-item-img img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .food-item:hover .food-item-img img {
+      transform: scale(1.05);
+    }
+
+    .food-item-body {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 280px;
+    }
+
+    .food-item-body h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      font-weight: 400;
+      color: #e8d5a3;
+    }
+
+    .food-item-body .food-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      background: rgba(232,213,163,0.12);
+      color: #e8d5a3;
+      border-radius: 10px;
+      font-size: 11px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+
+    .food-item-body p {
+      font-size: 14px;
+      line-height: 24px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .food-feature {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .food-feature-img {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .food-feature-img img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .food-feature-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .food-feature-text h3 {
+      font-size: 28px;
+      font-weight: 400;
+      color: #e8d5a3;
+      margin-bottom: 20px;
+    }
+
+    .food-feature-text p {
+      line-height: 28px;
+      font-size: 14px;
+    }
+
+    .food-list {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .food-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 25px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .food-list-item:hover {
+      background: rgba(255,255,255,0.04);
+    }
+
+    .food-list-item span:first-child {
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .food-list-item span:last-child {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    @media screen and (max-width: 768px) {
+      .food-item,
+      .food-item:nth-child(even) {
+        flex-direction: column;
+      }
+
+      .food-item-img {
+        flex: 1 1 100%;
+      }
+
+      .food-feature {
+        flex-direction: column;
+      }
+
+      .food-feature-img img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="back-welcome">Back to Welcome</a>
+  <div class="navbar">
+    <img class="logo" src="./img/logo1.png" alt="">
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="culture.html">Culture</a></li>
+      <li><a href="attractions.html">Attractions</a></li>
+      <li><a href="food.html" class="active">Cuisine</a></li>
+    </ul>
+    <div class="search-container">
+      <a href="index.html" class="back-btn">Welcome</a>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="banner">
+      <img src="./img/4.png" alt="Dali Cuisine">
+      <h1>CUI<br>SINE</h1>
+    </div>
+
+    <main>
+      <div class="box1">
+        <img class="hual" src="./img/hual.png" alt="">
+        <img class="huar" src="./img/huar.png" alt="">
+        <div class="food-intro">
+          <div class="title1">
+            <img src="./img/i1.png" alt="">Flavors of Dali<img src="./img/i1.png" alt="">
+          </div>
+          <p>
+            Dali's cuisine is a delightful reflection of its diverse cultural heritage. Drawing from Bai traditions, Yunnan's rich agricultural bounty, and influences from neighboring regions, the food of Dali offers an unforgettable gastronomic experience. From sour and spicy cold noodles to slow-cooked stews, every dish tells a story of the land and its people.
+          </p>
+        </div>
+
+        <div class="food-featured">
+          <div class="food-item">
+            <div class="food-item-img">
+              <img src="./img/f1.png" alt="Crossing-the-Bridge Noodles">
+            </div>
+            <div class="food-item-body">
+              <span class="food-tag">Signature Dish</span>
+              <h3>Crossing-the-Bridge Noodles</h3>
+              <p>The most famous dish in Yunnan, this elaborate rice noodle soup features a piping-hot chicken broth served with dozens of fresh ingredients including sliced pork, chicken, quail eggs, tofu skin, and vegetables that are cooked right at the table in the boiling broth.</p>
+            </div>
+          </div>
+
+          <div class="food-item">
+            <div class="food-item-img">
+              <img src="./img/f2.png" alt="Milk Fan">
+            </div>
+            <div class="food-item-body">
+              <span class="food-tag">Bai Specialty</span>
+              <h3>Milk Fan (Rushan)</h3>
+              <p>A signature Bai snack made from stretched and dried milk curd. This crispy, cheese-like delicacy is typically grilled over charcoal and served with sweet or savory toppings such as rose jam, condensed milk, or a sprinkle of sugar.</p>
+            </div>
+          </div>
+
+          <div class="food-item">
+            <div class="food-item-img">
+              <img src="./img/f3.png" alt="Sour and Spicy Fish">
+            </div>
+            <div class="food-item-body">
+              <span class="food-tag">Local Favorite</span>
+              <h3>Sour and Spicy Fish</h3>
+              <p>Erhai Lake fish cooked in a tangy, fiery broth made with local pickled cabbage, chili, and garlic. The combination of fresh-caught fish with the distinctive sourness of Yunnan fermentation creates an addictive flavor profile unique to the region.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <img class="dsl" src="./img/dsl.png" alt="">
+        <img class="dsr" src="./img/dsr.png" alt="">
+        <div class="food-feature">
+          <div class="food-feature-img">
+            <img src="./img/f4.png" alt="Dali food market">
+          </div>
+          <div class="food-feature-text">
+            <h3>The Art of Bai Tea</h3>
+            <p>
+              Tea is woven into the fabric of daily life in Dali. The traditional Bai "Three-Course Tea" ceremony (Sandao Cha) is an essential cultural practice that symbolizes the philosophy of life. The first course is bitter tea, representing the hardships of youth; the second is sweet tea with walnuts and brown sugar, symbolizing the rewards of perseverance; the third is an aftertaste tea with honey and cassia, representing the wisdom gained through experience.
+            </p>
+            <p>
+              Dali's proximity to the Ancient Tea Horse Road means the region has been a center of tea cultivation and trade for centuries. Local tea varieties, including the distinctive Yunnan Pu'er, are grown on the misty slopes of Cangshan Mountain and are prized by tea connoisseurs worldwide.
+            </p>
+          </div>
+        </div>
+
+        <div class="title1" style="margin-top: 80px;">
+          <img src="./img/i1.png" alt="">Seasonal Delicacies<img src="./img/i1.png" alt="">
+        </div>
+
+        <div class="food-list">
+          <div class="food-list-item">
+            <span>Spring — Wild Mushroom Dishes</span>
+            <span>March to May, the mountains yield over 200 edible mushroom varieties</span>
+          </div>
+          <div class="food-list-item">
+            <span>Summer — Cold Rice Noodles (Liangmixian)</span>
+            <span>Refreshingly sour and spicy, perfect for hot summer days</span>
+          </div>
+          <div class="food-list-item">
+            <span>Autumn — Walnut and Chestnut Dishes</span>
+            <span>Harvest season brings hearty nut-based stews and roasted snacks</span>
+          </div>
+          <div class="food-list-item">
+            <span>Winter — Cured Meats and Hot Pots</span>
+            <span>Smoky preserved meats and warming clay pot stews to beat the cold</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <img class="xia" src="./img/xia.png" alt="">
+      <img class="xiao" src="./img/23.png" alt=""><br>
+      <p>
+        <a href="home.html">Home</a>|<a href="culture.html">Culture</a>|<a href="attractions.html">Attractions</a>
+        |<a href="food.html">Cuisine</a>|<a href="index.html">Welcome</a><br>
+        <span class="student-id" style="position:static;top:auto;">i25035558@student.newinti.edi.my</span>
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>

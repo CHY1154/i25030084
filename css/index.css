@@ -1,0 +1,82 @@
+.box3 {
+  text-align: center;
+  color: white;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.chuancheng {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ll {
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+  background-color: rgb(50, 102, 124, 0.6);
+  color: #FAFBFB;
+  padding: 30px;
+  line-height: 26px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.ll p {
+  text-indent: 2em;
+}
+
+.cc {
+  width: 100%;
+  max-width: 380px;
+  box-sizing: border-box;
+}
+
+.cc img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.rr {
+  width: 100%;
+  max-width: 380px;
+  height: 430px;
+  object-fit: cover;
+}
+
+.bottom-image {
+  margin-top: 30px;
+}
+
+.jianshang1 img {
+  width: 280px;
+}
+
+@media screen and (max-width: 768px) {
+  .box3 {
+    margin: 60px auto;
+  }
+
+  .chuancheng {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ll, .cc, .rr {
+    max-width: 100%;
+  }
+
+  .rr {
+    height: 250px;
+  }
+
+  .jianshang1 img {
+    width: 100%;
+    max-width: 280px;
+  }
+}
